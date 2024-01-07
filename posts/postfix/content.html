@@ -1,0 +1,14 @@
+Postfix can be a pain sometimes when it comes to configuring it, but if you're having issues with Google and Postfix (and trying to get your Google buisness email working with Postfix), set your hostname in your Postfix config from <code>localhost</code> to your domain.
+<br>
+<div class="p-3 m-1 text-dark-emphasis bg-dark-subtle border border-dark-subtle rounded-4">
+    <h4 class="text-dark-emphasis bg-dark-subtle">Example</h4><hr>
+    <code>
+        myhostname = example.com
+    </code>
+</div>
+<p>I learnt this after spending so many hours messing around with Postfix, trying to get this to work.</p>
+<div class="alert alert-warning mt-2" role="alert">
+    <h2 class="alert-heading text-warning-emphasis bg-warning-subtle">Warning</h2>
+    <hr>
+    <p>I'm pretty sure this disables local email accounts from working, and I'm not sure how else to fix that (but I'm sure there is an easy fix for this too if you just Google it).</p>
+</div>

@@ -1,0 +1,21 @@
+<div class="alert alert-warning rounded-5" role="alert">
+    <p>
+        Website remake is a work in progress.
+        Everything you see on this page is a placeholder unless it does something 'useful'.
+    </p>
+
+    <button class="btn btn-primary mt-3 rounded-5" onclick="explode()">
+        Erm, actually...
+        <i class="bi-check2"></i>
+    </button>
+</div>
+<script>
+    function explode() {
+        var audio = new Audio('/public/explosion.mp3');
+        audio.play();
+        audio.onended = function() {
+            console.log("Explosion ended.")
+            audio.remove();
+        }
+    }
+</script>
