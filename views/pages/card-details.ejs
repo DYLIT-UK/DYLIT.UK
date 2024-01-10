@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+    <%- include('../partials/head'); %>
+    </head>
+
+    <body class="container-fluid">
+        <header class="m-2">
+            <%- include('../partials/header'); %>
+        </header>
+
+        <main>
+            <h1 class="display-3">DYLIT.UK</h1>
+            <small class="text-muted">I think this only works on Android products...</small>
+
+            <div class="alert alert-danger mt-2" role="alert">
+                <h2 class="alert-heading">CRITICAL NOTE</h2>
+                <hr>
+                <p>Your card details aren't collected by me <u><i>at all</i></u>. If you don't believe me, you can check the source code for this website. If you still don't believe me, ask yourself why you clicked onto this page.</p>
+                <input type="checkbox" class="form-check-input" id="acknowledgement" autocomplete="off" onclick="document.getElementById('acknowledgement').disabled = true; document.getElementById('fun').disabled = false">
+                <label for="acknowledgement">I understand.</label>
+            </div>
+
+            <p>Here's some instructions on how this works. If you've got an Android device, tap "Android". If you've got an Apple device, tap "Apple".</p>
+            <div class="accordion" id="acc">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="false" aria-controls="c1">
+                            Android
+                        </button>
+                    </h2>
+
+                    <div id="c1" class="accordion-collapse collapse" data-bs-parent="#acc">
+                        <div class="accordion-body">
+                            <ol>
+                                <li>Open this page in the Chrome browser (doesn't work on Firefox for Android, or any other browser iirc)</li>
+                                <li>Check the "I understand." box.</li>
+                                <li>Tap the "Card Number" input.</li>
+                                <li>On the "Autofill payment info" screen, tap a card.</li>
+                                <li>Enter your security code.</li>
+                                <li>Tap "Confirm".</li>
+                                <li>The "Card Number", and "Expiry Date" boxes should now have your card details.</li>
+                            </ol>
+                            <div class="accordion" id="acc-an-photos">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed n-out" type="button" data-bs-toggle="collapse" data-bs-target="#cap1" aria-expanded="false" aria-controls="cap1">
+                                            Images
+                                        </button>
+                                    </h2>
+                
+                                    <div id="cap1" class="accordion-collapse collapse" data-bs-parent="#acc-an-photos">
+                                        <div class="accordion-body">
+                                            <a href="/public/images/gpay/phone.png" target="_blank"><img src="/public/images/gpay/phone.png" width="256px" height="256px" alt="Step 3" class="img-fluid"></a>
+                                            <a href="/public/images/gpay/cvc.png" target="_blank"><img src="/public/images/gpay/cvc.png" width="256px" height="256px" alt="Step 5" class="img-fluid"></a>
+                                            <br>
+                                            <small class="text-muted">Click the images to enlarge them.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed n-out" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+                            Apple
+                        </button>
+                    </h2>
+
+                    <div id="c2" class="accordion-collapse collapse" data-bs-parent="#acc">
+                        <div class="accordion-body">
+                            <i>Instructions not available yet.</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form action="">
+                <fieldset disabled id="fun">
+                    <div class="mb-3">
+                        <label for="c-num" class="form-label">Card Number</label>
+                        <input autocomplete="cc-number" class="form-control" id="c-num" type="number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="c-exp" class="form-label">Expiry Date</label>
+                        <input autocomplete="cc-exp" class="form-control" id="c-exp">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Fake Submit Button To Trick Your Browser™</button>
+                </fieldset>
+            </form>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

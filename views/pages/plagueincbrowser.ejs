@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+    <head>
+        <%- include('../partials/head'); %>
+        <script src="/public/js/plague.js"></script>
+    </head>
+
+    <body class="container-fluid">
+        <header class="m-2">
+            <%- include('../partials/header'); %>
+        </header>
+
+        <main>
+            <h2 class="display-3">DYLIT.UK - Plague Inc. Scenario Browser</h2>
+            <small class="text-muted mb-3">This is a browser for Plague Inc. scenarios. You can't play them here, or download them, but you can see the information just like in the game.</small>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="searchbar" placeholder="Search for a scenario">
+                <button class="btn btn-outline-secondary" type="button" id="searchbar-button" onclick="search()">Search</button>
+            </div>
+
+            <h5 class="display-5" id="page-info">Page 0 of 0 (0 Scenarios Total)</h5>
+            <div class="row row-cols-1 row-cols-md-2 g-2" id="scenarios">
+                <!-- scenarios will be added here -->
+            </div>
+
+            <div class="btn-group mt-3 mb-3" role="group" id="nav-buttons">
+                <!-- back and forward buttons will be added here -->
+            </div>
+
+            <div class="modal" id="loadmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Please wait...</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                        <div class="modal-body">
+                            <div class="text-center align-items-center mb-3">
+                                <h3 class="modal-title mb-2">Downloading information...</h3>
+                                <!-- <i role="status">Loading...</i> -->
+                                <div class="spinner-border mb-2" style="width: 3rem; height: 3rem;"></div>
+                                <p>Note: This isn't downloading the actual scenarios!</p>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>
